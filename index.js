@@ -17,7 +17,7 @@ function myFunction() {
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+// The nested function can acces the variable internal because the argument that is given to it is inside the function that the nested function resides in. Since its in the function that its declared, it can also read it as so long as its fed as an arguement.
 
 
 
@@ -30,10 +30,13 @@ function myFunction() {
 💡 NOTE: you may use a for loop for this function if you wish 
 */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(number) {
+  let num = number;
+  for (let i = 0; i < number; i++) {
+    num = num + i;
   }
+  return num;
+}
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -60,8 +63,10 @@ const zooAnimals = [
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(array) {
+    let displayNames = [];
+    zooAnimals.forEach(array => displayNames.push(`name: ${array.animal_name}, scientific: ${array.scientific_name}`));
+    return displayNames;
   }
   
 
@@ -75,8 +80,9 @@ const zooAnimals = [
   💡 NOTE: Do some research for other methods that can help help you
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(array){
+    let lowerCaseNames = array.map(name => name.animal_name.toLowerCase());
+    return lowerCaseNames;
   }
   
   
@@ -88,8 +94,11 @@ const zooAnimals = [
   3. Return this new array
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(array){
+    let lowPopulationAnimals = array.filter((animal) => {
+      return animal.population < 5;
+    })
+    return lowPopulationAnimals;
   }
   
 
@@ -102,8 +111,11 @@ const zooAnimals = [
   💡 NOTE: Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count. Check MDN/W3Schools for syntax!
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(array){
+    let totalPopulation = array.reduce((total, animal) => {
+      return total + animal.population;
+    }, 0);
+    return totalPopulation;
   }
   
   
@@ -116,8 +128,8 @@ const zooAnimals = [
     💡 NOTE: The tests for 'consume' will pass if it is created correctly and also after you correctly complete the functions 'add' and 'greeting' below in Step 2.
   */
 
-  function consume(/*Your Code Here */){
-    /*Your Code Here */
+  function consume(array){
+   
   }
  
   
